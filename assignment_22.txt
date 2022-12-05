@@ -1,0 +1,103 @@
+1.
+
+def divisorSum( n ):
+    sum = 0
+     
+    for i in range(1, n + 1):
+         
+        # Find all divisors of i
+        # and add them
+        j = 1
+        while j * j <= i:
+            if i % j == 0:
+                if i / j == j:
+                    sum += j
+                else:
+                    sum += j + i / j
+            j = j + 1
+    return int(sum)
+
+2.
+
+def common_data(list1, list2):
+     result = False
+     for x in list1:
+         for y in list2:
+             if x == y:
+                 result = True
+                 return result
+
+3.
+
+int n;
+    String temp;
+    Scanner s = new Scanner(System.in);
+    System.out.print("Enter number of names you want to enter:");
+    n = s.nextInt();
+    String[] names = new String[n];
+    Scanner s1 = new Scanner(System.in);
+    System.out.println("Enter all the names:");
+    for(int i = 0; i < n; i++)
+    {
+        names[i] = s1.nextLine();
+    }
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = i + 1; j < n; j++)
+        {
+            if (names[i].compareTo(names[j])>0)
+            {
+                temp = names[i];
+                names[i] = names[j];
+                names[j] = temp;
+            }
+        }
+    }
+    System.out.print("Names in Sorted Order:");
+    for (int i = 0; i < n - 1; i++)
+    {
+        System.out.print(names[i] + ",");
+    }
+    System.out.print(names[n - 1]);
+
+4.
+
+def is_isogram(word):
+ 
+    # Convert the word or sentence in lower case letters.
+    clean_word = word.lower()
+ 
+    # Make an empty list to append unique letters
+    letter_list = []
+ 
+    for letter in clean_word:
+ 
+        # If letter is an alphabet then only check
+        if letter.isalpha():
+            if letter in letter_list:
+                return False
+            letter_list.append(letter)
+ 
+    return True
+ 
+5.
+
+def isAlphabaticOrder(s):
+     
+    # length of the string
+    n = len(s)
+ 
+    # create a character array
+    # of the length of the string
+    c = [s[i] for i in range(len(s))]
+ 
+    # sort the character array
+    c.sort(reverse = False)
+ 
+    # check if the character array
+    # is equal to the string or not
+    for i in range(n):
+        if (c[i] != s[i]):
+            return False
+         
+    return True
